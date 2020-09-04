@@ -1,0 +1,10 @@
+<nav class="nav">
+  <%= link_to "Home", root_path, class: 'nav-link'%>
+
+  <% if current_user %>
+    <%= link_to "Logout", logout_path, method: :delete, class: 'nav-link mr-sm-2 m-auto'%>
+  <% else %>
+    <%= link_to "Login", login_path, class: 'nav-link mr-sm-2 m-auto'%>
+    <%= link_to "Sign Up", new_user_path, class: 'nav-link '%>
+  <% end %>
+</nav>

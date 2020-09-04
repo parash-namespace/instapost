@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
 	before_action :authenticate_user, only: [:new, :create, :edit, :update]
 	before_action :assign_post, only: [:edit, :update, :destroy]
+	before_action :is_owner?, only: [:edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit([:photo, :description, :user_id])
+		params.require(:post).permit([:photo, :description])
 	end
 
 	def assign_post
