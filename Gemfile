@@ -11,6 +11,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'pg'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'cloudinary', '~> 1.16', '>= 1.16.1'
+gem 'simple_form'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
