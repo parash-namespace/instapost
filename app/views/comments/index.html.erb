@@ -1,0 +1,20 @@
+<div class="container mt-5">
+
+	<%= render 'posts/post', {post: @post} %>
+
+
+	<%= render 'comments/list', {post: @post} %>
+
+	<% if current_user %>
+
+	<%= simple_form_for @comment, url: post_comments_path(@post.id) do |f| %>
+
+	<div class="form-group">
+		<%= f.input :comment %>
+		<%= f.submit "Add Comment", class: 'mt-2 btn btn-primary' %>
+		<%= link_to "Back", posts_path, class: 'mt-2 btn btn-info' %>
+	</div>
+	<% end %>
+
+	<% end %>
+</div>

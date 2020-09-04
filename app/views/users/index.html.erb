@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Email</th>
-      <th colspan="3"></th>
+      <th>Posts</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -14,12 +15,9 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
+        <td><%= pluralize(user.posts.count, 'post') %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>

@@ -1,18 +1,17 @@
 <div class="container">
 
 	<% @posts.each do |post| %>
-	<div class="m-5">
-		<%= link_to image_tag(post.photo, style: 'height: 100px;'), post.photo, target: '_blank' %>
-		<br>
-		User: <%= post.user.email %>
-		<br>
-		Description: <%= post.description %>
-		<br>
-		<% if current_user == post.user %>
-		<%= link_to "Edit Post", edit_post_path(post), class: 'btn btn-info' %>
-		<%= link_to "Delete Post", post_path(post), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
-		<% end %>
-	</div>
-	<% end %>
 
+		<%= render 'posts/post', {post: post} %>
+		
+		<% if current_user %>
+			<%= link_to "Add Comment", post_comments_path(post.id), class: 'btn btn-default btn-primary' %>
+		<% end %>
+
+		<% if current_user == post.user %>
+			<%= link_to "Edit Post", edit_post_path(post), class: 'btn btn-info' %>
+			<%= link_to "Delete Post", post_path(post), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
+		<% end %>
+	
+	<% end %>
 </div>

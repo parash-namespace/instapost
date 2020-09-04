@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   
-  resources :users, except: [:edit, :destroy, :update]
-  resources :posts
+  resources :users, except: [:destroy, :update]
+  
+  resources :posts do
+  	resources :comments, except: [:new, :edit, :update]
+  end
   
   root 'posts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

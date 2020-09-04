@@ -1,0 +1,11 @@
+<div class="m-1">
+	<%= link_to image_tag(post.photo, style: 'height: 100px;'), post.photo, target: '_blank' %>
+	<br>
+	User: <%= post.user.email %>
+	<br>
+	Description: <%= post.description %>
+	<br>
+	<%= link_to pluralize(post.comments.count, 'comment'), post_comments_path(post.id) %>
+	<br>
+
+</div>
