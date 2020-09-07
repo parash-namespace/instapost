@@ -1,43 +1,46 @@
+
+
 body{
-	margin: 0px !important;
+  margin: 0px !important;
 }
 
 .footer{
-	bottom: 0 !important;
-	position: fixed;
-	width: 100%;
+  bottom: 0 !important;
+  position: fixed;
+  width: 100%;
 }
 
 .header{
-	top: 0 !important;
-	position: fixed;
-	width: 100%;
+  top: 0 !important;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
 .navbar-custom{
-	background-color: indigo !important;
+  background-color: indigo !important;
 }
 
 .bg-custom{
-	background-color: indigo !important;
+  background-color: indigo !important;
 }
 
 .bg-custom-gray{
-	background-color: #EEE !important;
+  background-color: #EEE !important;
 }
 
 .border-custom{
-	border-color: #cbd0d5 !important;
+  border-color: #cbd0d5 !important;
 }
 
 .footer{
-	margin-bottom: auto !important	;
-}
-
-.username{
-	font-size: 14px
+  margin-bottom: auto !important  ;
 }
 
 .flex-0-48{
-	flex: 0 48%;
+  flex: 0 48%;
+}
+
+.font-14{
+  font-size: 14px;
 }

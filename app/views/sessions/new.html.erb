@@ -1,19 +1,20 @@
-<div class="container col-md-4">
-  <p id="alert"><%= alert %></p>
+<div class="container col-md-4 border border-primary p-5">
   <h4>Login</h4>
   
-  <%= form_for login_path do |f| %>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control', placeholder: 'Email here.' %>
+  <div class="mt-4">    
+    <%= form_tag login_path do |f| %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, nil, class: 'form-control', placeholder: 'Email here.' %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password here.' %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Login", class: 'btn btn-primary btn-sm' %>
+    </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', placeholder: 'Password here.' %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Login", class: 'btn btn-primary btn-sm' %>
-  </div>
-  <% end %>
 
 </div>

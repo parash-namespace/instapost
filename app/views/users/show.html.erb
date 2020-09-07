@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <div class="col-md-12 d-flex flex-wrap m-0">
 
+	<% if @user.posts.any? %>
 	<% @user.posts.each do |post| %>
 	<div class="p-3 m-2 bg-custom-gray col-md-6 border border-custom flex-0-48">
 		<%= render 'posts/post', {post: post} %>
@@ -16,6 +15,15 @@
 			<%= link_to "Delete Post", post_path(post), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
 			<% end %>
 		</div>
+	</div>
+	<% end %>
+	<% else %>
+	<div class="container mt-5">
+	<center>
+		<h3>
+			No post for the user yet.
+		</h3>
+	</center>
 	</div>
 	<% end %>
 </div>
