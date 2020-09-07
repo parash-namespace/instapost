@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, class: 'form-control', placeholder: 'Choose a username' %>
+  </div>
+
+  <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email, class: 'form-control', placeholder: 'Enter Email. Eg: someone@gmail.com' %>
   </div>
@@ -24,6 +29,10 @@
   <div class="field">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Re-enter password.' %>
+  </div>
+
+  <div class="field">
+    <%= form.file_field :photo %>
   </div>
 
   <div class="actions">

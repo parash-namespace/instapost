@@ -1,5 +1,7 @@
 <div class="mb-2">
-	<%= link_to post.user.email, user_path(post.user), class: 'text-primary font-14' %>
+
+	<%= image_tag (post.user.photo.present? ? post.user.photo : ''), style: 'height: 40px;  border-radius: 50% !important' %>
+	<%= link_to (post.user.username ? post.user.username : post.user.email), user_path(post.user), class: 'text-primary font-14' %>
 </div>
 
 <%= link_to image_tag(post.photo, class: 'col-md-12'), post.photo, target: '_blank', class: 'badge' %>
