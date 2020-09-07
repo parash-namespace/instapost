@@ -1,10 +1,9 @@
-<div class="col-md-9 offset-md-1">
-  <h1>Users</h1>
+<div class="col-md-9 offset-md-1 bg-custom-gray p-4">
 
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Email</th>
+        <th>Users</th>
         <th>Posts</th>
         <th></th>
       </tr>
@@ -13,9 +12,8 @@
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= pluralize(user.posts.count, 'post') %></td>
-        <td><%= link_to 'Posts', user %></td>
+        <td><%= image_tag (user.photo.present? ? user.photo : 'user.jpg'), class: 'profile_pic mr-5' %><%= (user.username) ? (user.username) : (user.email) %></td>
+        <td><%= link_to pluralize(user.posts.count, 'post'), user %></td>
       </tr>
       <% end %>
     </tbody>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   
-  resources :users, except: [:destroy, :update]
+  resources :users, except: [:destroy]
   
   resources :posts do
   	resources :comments, except: [:new, :edit, :update]

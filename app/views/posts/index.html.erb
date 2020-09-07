@@ -1,3 +1,5 @@
+<% if @posts.any? %>
+
 <div class="col-md-12 d-flex flex-wrap m-0">
 
 	<% @posts.each do |post| %>
@@ -17,3 +19,9 @@
 	</div>
 	<% end %>
 </div>
+
+<% else %>
+<center class="mt-5">
+	<h2 class="text-light">No Posts Yet.</h2>
+</center>
+<% end %>
