@@ -1,15 +1,19 @@
-<p id="alert"><%= alert %></p>
-<h4>Login</h4>
-<%= form_tag login_path do |form| %>
+<div class="container col-md-4">
+  <p id="alert"><%= alert %></p>
+  <h4>Login</h4>
+  
+  <%= form_for login_path do |f| %>
   <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'Email here.' %>
   </div>
   <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control', placeholder: 'Password here.' %>
   </div>
   <div class="actions">
-    <%= submit_tag "Login" %>
+    <%= f.submit "Login", class: 'btn btn-primary btn-sm' %>
   </div>
-<% end %>
+  <% end %>
+
+</div>

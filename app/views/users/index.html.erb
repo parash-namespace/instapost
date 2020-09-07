@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="col-md-9 offset-md-1">
+  <h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Posts</th>
-      <th></th>
-    </tr>
-  </thead>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Posts</th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
+    <tbody>
+      <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
         <td><%= pluralize(user.posts.count, 'post') %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Posts', user %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,19 +1,24 @@
-<h1><%= @post.new_record? ? "New" : "Edit" %> Post</h1>
+<div class="col-md-12">
+	<div class="col-md-6 m-2 p-4 border border-custom bg-custom-gray">
+		<h3><%= @post.new_record? ? "Add New" : "Edit" %> Post</h3>
 
-<div class="container m-2 p-4 col-md-6">
+		<div class="col-md-12">
 
-	<%= simple_form_for @post do |f| %>
+			<%= simple_form_for @post do |f| %>
 
-	<div class="form-group mb-2 p-3">
-		<%= f.input :photo %>
+			<div class="form-group mb-2 p-3">
+				<%= f.input :photo %>
+			</div>
+			<div class="form-group mb-2 p-3">
+				<%= f.input :description %>
+			</div>
+			<div class="form-group mb-2 p-3">
+				<%= f.submit @post.new_record? ? "Post" : "Update", class: 'btn btn-primary btn-sm' %>
+				<%= link_to "Cancel", posts_path, class: 'btn btn-danger btn-sm' %>
+			</div>
+
+			<% end %>
+
+		</div>
 	</div>
-	<div class="form-group mb-2 p-3">
-		<%= f.input :description %>
-	</div>
-	<div class="form-group mb-2 p-3">
-		<%= f.submit @post.new_record? ? "Post" : "Update", class: 'btn btn-primary' %>
-	</div>
-
-	<% end %>
-
 </div>

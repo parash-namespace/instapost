@@ -1,11 +1,20 @@
+<% if post.comments.any? %>
+
 <% post.comments.each do |comment| %>
 <div class="m-1">
 	<strong><%= comment.user.email %></strong> ~ 
 	<span><%= comment.comment %></span>
 	
 	<% if comment.user == current_user %>	
-		<%= link_to 'Delete', post_comment_path(post_id: post.id, id: comment.id), method: :delete, data: {confirm: 'Remove Comment?'} %>
+	<%= link_to 'Delete', post_comment_path(post_id: post.id, id: comment.id), method: :delete, data: {confirm: 'Remove Comment?'} %>
 	<% end %>
 
+</div>
+<% end %>
+<% else %>
+<div class="mt-5">
+	<center>
+		<h2>No Comments Yet.</h2>
+	</center>
 </div>
 <% end %>

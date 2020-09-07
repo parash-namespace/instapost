@@ -1,11 +1,39 @@
-<nav class="nav">
-  <%= link_to "Home", root_path, class: 'nav-link'%>
-  <%= link_to "Users", users_path, class: 'nav-link'%>
+<nav class="navbar navbar-expand-lg navbar-custom navbar-dark bg-dark bg-custom p-2 header">
 
-  <% if current_user %>
-    <%= link_to "Logout", logout_path, method: :delete, class: 'nav-link mr-sm-2 m-auto'%>
-  <% else %>
-    <%= link_to "Login", login_path, class: 'nav-link mr-sm-2 m-auto'%>
-    <%= link_to "Sign Up", new_user_path, class: 'nav-link '%>
-  <% end %>
+	<%= link_to "Insta Post", root_path, class: 'navbar-brand'%>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<%= link_to "Posts", root_path, class: 'nav-link'%>
+			</li>
+			<li class="nav-item">
+				<%= link_to "Users", users_path, class: 'nav-link'%>
+			</li>
+		</ul>
+		<ul class="navbar-nav float-right">
+			<% if current_user %>
+			<li class="nav-item">
+				<%= link_to "My Posts", current_user, class: 'nav-link mr-sm-2 m-auto'%>
+			</li>
+			<li class="nav-item">
+				<%= link_to "Add Post", new_post_path, class: 'nav-link mr-sm-2 m-auto'%>
+			</li>
+			<li class="nav-item">
+				<%= link_to "Logout", logout_path, method: :delete, class: 'nav-link mr-sm-2 m-auto'%>
+			</li>
+			<% else %>
+			<li class="nav-item">
+				<%= link_to "Login", login_path, class: 'nav-link mr-sm-2 m-auto'%>
+			</li>
+			<li class="nav-item">
+				<%= link_to "Sign Up", new_user_path, class: 'nav-link '%>
+			</li>
+			<% end %>
+		</ul>
+
+	</div>
 </nav>

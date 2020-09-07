@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>InstaPost</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>InstaPost</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'shared/navigation' %>
-    <%= render 'shared/messages' %>
-    <%= yield %>
-  </body>
+<body class="h-100 pt-5 mt-3 pb-5">
+  <%= render 'shared/navigation' %>
+  <%= render 'shared/messages' %>
+  <%= yield %>
+  <%= render 'shared/footer' %>
+</body>
 </html>

@@ -1,0 +1,43 @@
+body{
+	margin: 0px !important;
+}
+
+.footer{
+	bottom: 0 !important;
+	position: fixed;
+	width: 100%;
+}
+
+.header{
+	top: 0 !important;
+	position: fixed;
+	width: 100%;
+}
+
+.navbar-custom{
+	background-color: indigo !important;
+}
+
+.bg-custom{
+	background-color: indigo !important;
+}
+
+.bg-custom-gray{
+	background-color: #EEE !important;
+}
+
+.border-custom{
+	border-color: #cbd0d5 !important;
+}
+
+.footer{
+	margin-bottom: auto !important	;
+}
+
+.username{
+	font-size: 14px
+}
+
+.flex-0-48{
+	flex: 0 48%;
+}

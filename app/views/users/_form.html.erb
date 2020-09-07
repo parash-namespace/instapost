@@ -13,20 +13,21 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Enter Email. Eg: someone@gmail.com' %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: 'form-control', placeholder: 'Password here.' %>
   </div>
 
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Re-enter password.' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary btn-sm' %>
+    <%= link_to 'Back', users_path, class: 'btn btn-danger btn-sm' %>
   </div>
 <% end %>
