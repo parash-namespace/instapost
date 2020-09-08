@@ -12,6 +12,9 @@ class User < ApplicationRecord
 
   acts_as_voter
 
+  has_many :followers, class_name: "Follow", foreign_key: :following_id
+  has_many :followings, class_name: "Follow", foreign_key: :follower_id
+
   def downcase_email
   	self.email = email.downcase
   end

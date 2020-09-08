@@ -4,13 +4,18 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
   get 'signup', to: 'users#new', as: 'signup'
+
   resources :users, except: [:destroy, :new]
+  
+  post 'follows/:id', to: 'follows#create', as: 'follows'
+  delete 'follows/:id', to: 'follows#destroy'
   
   resources :posts do
   	resources :comments, except: [:new, :edit, :update]
     resources :upvotes, only: [:create]
     resources :downvotes, only: [:create]
   end
+
   
   root 'posts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
