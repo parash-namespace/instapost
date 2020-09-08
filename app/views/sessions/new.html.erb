@@ -2,7 +2,7 @@
   <h4>Login</h4>
   
   <div class="mt-4">    
-    <%= form_tag login_path do |f| %>
+    <%= simple_form_for login_path do |f| %>
     <div class="field">
       <%= label_tag :email %>
       <%= text_field_tag :email, nil, class: 'form-control', placeholder: 'Email here.' %>

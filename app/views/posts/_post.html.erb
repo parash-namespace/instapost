@@ -3,11 +3,15 @@
 	<%= image_tag (post.user.photo.present? ? post.user.photo : 'user.jpg'), class: 'profile_pic' %>
 	<%= link_to (post.user.username ? post.user.username : post.user.email), user_path(post.user), class: 'text-primary font-14' %>
 </div>
-
 <%= link_to image_tag(post.photo, class: 'col-md-12'), post.photo, target: '_blank', class: 'badge' %>
 
-<div class="mt-4">
-	<strong>Description:</strong> <%= post.description %>
-	<br>
-	<%= link_to pluralize(post.comments.count, 'comment'), post_comments_path(post.id), class: 'badge badge-info' %>	
+<div class="mt-4 ml-3">
+	<span id="likes_container_<%= post.id %>">
+		<%= render 'posts/likes', {post: post} %>
+	</span>
+
+	<%= link_to pluralize(post.comments.count, 'comment'), post_comments_path(post.id), class: 'badge badge-info' %><br>
+
+	<strong>Description:</strong> <%= post.description %><br>
+
 </div>

@@ -10,9 +10,10 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  acts_as_voter
 
   def downcase_email
-	self.email = email.downcase
+  	self.email = email.downcase
   end
 
 end

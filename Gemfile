@@ -12,7 +12,7 @@ gem 'pg'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'cloudinary', '~> 1.16', '>= 1.16.1'
 gem 'simple_form'
-
+gem 'acts_as_votable'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
