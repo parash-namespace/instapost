@@ -2,7 +2,7 @@
 
 <% post.comments.each do |comment| %>
 <div class="m-1">
-	<strong><%= comment.user.email %></strong> ~ 
+	<strong><%= (comment.user_username) ? (comment.user_username) : (comment.user_email) %></strong> ~ 
 	<span><%= comment.comment %></span>
 	
 	<% if comment.user == current_user %>	

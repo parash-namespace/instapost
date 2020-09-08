@@ -1,23 +1,8 @@
 <% if @posts.any? %>
 
-<div class="col-md-12 d-flex flex-wrap m-0">
+<div class="col-md-12 d-flex flex-wrap m-0" id="my-posts">
 
-	<% @posts.each do |post| %>
-	<div class="p-3 m-2 bg-custom-gray col-md-6 border border-custom flex-0-48">
-		<%= render 'posts/post', {post: post} %>
-		
-		<div class="mt-2">
-			<% if current_user %>
-			<%= link_to "Add Comment", post_comments_path(post.id), class: 'btn btn-sm btn-default btn-primary' %>
-			<% end %>
-
-			<% if current_user == post.user %>
-			<%= link_to "Edit Post", edit_post_path(post), class: 'btn btn-sm btn-info' %>
-			<%= link_to "Delete Post", post_path(post), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
-			<% end %>
-		</div>
-	</div>
-	<% end %>
+	<%= render 'posts/list', {posts: @posts} %>
 </div>
 
 <% else %>
@@ -25,3 +10,9 @@
 	<h2 class="text-light">No Posts Yet.</h2>
 </center>
 <% end %>
+
+
+
+<div id="infinite-scrolling">
+	<%= will_paginate @products %>
+</div>

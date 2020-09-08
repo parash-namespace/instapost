@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	before_action :is_owner?, only: [:edit, :update, :destroy]
 
 	def index
-		@posts = Post.all
+		@posts = Post.paginate(page: params[:page], per_page: 4).order('created_at desc').includes(:user, comments: :user)
 	end
 
 

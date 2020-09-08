@@ -1,6 +1,6 @@
 Week 4: (Total - )
 
-	Chapter 1: (Total - 56 mins)
+	Chapter 1: (Total - 88 mins)
 
 		1.  35 mins
 		2.  10 mins
@@ -9,16 +9,16 @@ Week 4: (Total - )
 		Sending an AJAX Request(techrise). 7 mins
 
 
-	Chapter 2: (Total - 71 mins)
+	Chapter 2: (Total - 32 mins)
 
-		1.  mins
-		2.  mins
+		1.  7 mins
+		2.  25 mins
 
 
-	Chapter 3: (Total - 57 mins)
+	Chapter 3: (Total - 15 mins)
 
-		1.  mins
-		2.  mins
+		1. 15 mins
+		2. 5 mins
 
 
 
