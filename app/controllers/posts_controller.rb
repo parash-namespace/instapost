@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :authenticate_user, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user, only: [:new, :create, :edit, :update, :following_post]
 	before_action :assign_post, only: [:edit, :update, :destroy]
 	before_action :is_owner?, only: [:edit, :update, :destroy]
 
