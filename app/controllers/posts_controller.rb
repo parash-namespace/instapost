@@ -40,6 +40,11 @@ class PostsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def following_post
+		users = current_user.followings.pluck('following_id')
+		@posts = Post.where('user_id': users).paginate(page: params[:page], per_page: 4).order('created_at desc').includes(:user, comments: :user)
+		render :index
+	end
 
 	private
 

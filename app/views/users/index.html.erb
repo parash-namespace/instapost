@@ -1,36 +1,18 @@
-<div class="col-md-9 offset-md-1 bg-custom-gray p-4">
+<div class="col-md-12 d-flex flex-wrap justify-content-around">
+  <% @users.each do |user| %>
+  <% if current_user != user %>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Users</th>
-        <th>Posts</th>
-        <% if current_user.present? %>
-        <th></th>
-        <% end %>
-      </tr>
-    </thead>
+  <div class="card mb-4 mr-5" style="width: 18rem;">
+    <%= image_tag (user.photo.present? ? user.photo : 'user.jpg'), class: 'card-img-top profile_pic_card' %>
+    <div class="card-body">
+      <h5 class="card-title"><%= (user.username) ? (user.username) : (user.email) %></h5>
+    
+      <span id="follow_btn_<%= user.id %>">
+        <%= render 'follows/follow_btn', {user: user} %>    
+      </span>
+    </div>
+  </div>
 
-    <tbody>
-      <% @users.each do |user| %>
-
-      <% if current_user != user %>
-
-      <tr>
-        <td><%= image_tag (user.photo.present? ? user.photo : 'user.jpg'), class: 'profile_pic mr-5' %><%= (user.username) ? (user.username) : (user.email) %></td>
-        <td><%= link_to pluralize(user.posts.count, 'post'), user %></td>
-        
-        <% if current_user.present? %>
-        <td id="follow_btn_<%= user.id %>">
-          <%= render 'follows/follow_btn', {user: user} %>
-        </td>
-        <% end %>
-      </tr>
-      
-      <% end %>
-
-      <% end %>
-    </tbody>
-  </table>
-
+  <% end %>
+  <% end %>
 </div>

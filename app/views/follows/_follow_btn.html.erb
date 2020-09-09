@@ -1,5 +1,9 @@
+<p class="card-text"><%= link_to pluralize(user.posts.count, 'post'), user %>, <%= pluralize(user.followers.count, 'follower') %></p>
+
+<% if current_user.present? %>
 <% if is_followed_by_current_user?(user) %>
-<%= link_to "Unfollow", follows_path(user), class: 'btn btn-danger btn-sm', method: :delete, remote: true %>
+<%= link_to "Unfollow", follows_path(user), class: 'btn btn-danger btn-sm', method: :delete, remote: true, data: {confirm: 'After unfollowing the user, you won\'t be able to see their post'} %>
 <% else %>
 <%= link_to "Follow", follows_path(user), class: 'btn btn-primary btn-sm', method: :post, remote: true %>
+<% end %>
 <% end %>

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  before_action :is_owner?, only: [:edit, :update]
+
   # GET /users
   # GET /users.json
   def index
@@ -73,4 +75,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :photo, :username)
     end
+
+    def is_owner?
+      redirect_to root_path if User.find(params[:id]) != current_user
+    end
+
 end

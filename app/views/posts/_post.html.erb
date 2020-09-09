@@ -3,7 +3,9 @@
 	<%= image_tag (post.user_photo.present? ? post.user_photo : 'user.jpg'), class: 'profile_pic' %>
 	<%= link_to (post.user_username ? post.user_username : post.user.email), user_path(post.user), class: 'text-primary font-14' %>
 </div>
-<%= link_to image_tag(post.photo, class: 'col-md-12'), post.photo, target: '_blank', class: 'badge' %>
+<div class="col-md-12" style="height: 300px;">
+	<%= link_to image_tag(post.photo, class: 'col-md-12'), post.photo, target: '_blank', class: 'badge' %>
+</div>
 
 <div class="mt-4 ml-3">
 	<span id="likes_container_<%= post.id %>">

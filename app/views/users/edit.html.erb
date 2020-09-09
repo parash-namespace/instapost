@@ -1,8 +1,8 @@
 <div class="container col-md-6 border border-custom bg-custom-gray p-5">
-
 	<div class="row">
 		<div class="col-md-9">
 		<h1>Update Profile</h1>
+		<p class="card-text"><%= link_to pluralize(@user.posts.count, 'post'), @user %>, <%= pluralize(@user.followers.count, 'follower') %></p>
 		</div>
 		<%= image_tag @user.photo.present? ? @user.photo : 'user.jpg', class: 'profile_pic_lg float-right' %>
 	</div>
