@@ -8,11 +8,9 @@
     <div class="card-body">
       <h5 class="card-title"><%= (user.username) ? (user.username) : (user.email) %></h5>
 
-      <span id="follow_btn_<%= user.id %>">
-
         <%= link_to pluralize(user.posts.count, 'post'), user %>, <%= pluralize(user.followers.count, 'follower') %>
         <%= render 'follows/follow_btn', {user: user} %>    
-      </span>
+
     </div>
   </div>
 
