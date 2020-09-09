@@ -14,12 +14,12 @@ class FollowsController < ApplicationController
 
 	def followers
 		@users = current_user.follower_users
-		render :index
+		render 'users/index'
 	end
 
 	def followings
 		@users = current_user.following_users
-		render :index
+		render 'users/index'
 	end
 
 end
