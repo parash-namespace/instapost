@@ -13,10 +13,8 @@ class CommentsController < ApplicationController
 	def create
 		@comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
 		if @comment.valid?
-			flash[:success] = "Comment added successfully"
 			redirect_to post_comments_path(@post.id)
 		else
-			flash[:failed] = "Failed to add comment"
 			render :new
 		end
 	end
