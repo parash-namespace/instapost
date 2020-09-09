@@ -13,14 +13,12 @@ class FollowsController < ApplicationController
 	end
 
 	def followers
-		followers = current_user.followers.pluck('follower_id')
-		@users = User.where('id': followers)
+		@users = current_user.follower_users
 		render :index
 	end
 
 	def followings
-		followings = current_user.followings.pluck('following_id')
-		@users = User.where('id': followings)
+		@users = current_user.following_users
 		render :index
 	end
 

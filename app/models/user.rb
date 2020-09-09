@@ -15,6 +15,10 @@ class User < ApplicationRecord
   has_many :followers, class_name: "Follow", foreign_key: :following_id
   has_many :followings, class_name: "Follow", foreign_key: :follower_id
 
+  has_many :follower_users, through: :followers, source: :follower
+  has_many :following_users, through: :followings, source: :following
+
+
   def downcase_email
   	self.email = email.downcase
   end
