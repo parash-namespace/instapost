@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-9">
 		<h1>Update Profile</h1>
-		<p class="card-text"><%= link_to pluralize(@user.posts.count, 'post'), @user %>, <%= pluralize(@user.followers.count, 'follower') %></p>
+		<p class="card-text"><%= link_to pluralize(@user.posts.count, 'post'), @user %>, <%= link_to pluralize(@user.followers.count, 'follower'), followers_path %>, <%= link_to pluralize(@user.followings.count, 'following'), followings_path %></p>
 		</div>
 		<%= image_tag @user.photo.present? ? @user.photo : 'user.jpg', class: 'profile_pic_lg float-right' %>
 	</div>

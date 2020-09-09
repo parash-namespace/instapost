@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
   resources :users, except: [:destroy, :new]
   
+
   post 'follows/:id', to: 'follows#create', as: 'follows'
   delete 'follows/:id', to: 'follows#destroy'
+
+  get 'followers', to: 'follows#followers', as: 'followers'
+  get 'followings', to: 'follows#followings', as: 'followings'
   
-  resources :posts do
+  resources :posts, except: [:show] do
   	resources :comments, except: [:new, :edit, :update]
     resources :upvotes, only: [:create]
     resources :downvotes, only: [:create]
@@ -18,6 +22,6 @@ Rails.application.routes.draw do
 
   
   root 'posts#index'
-  get 'followings', to: 'posts#following_post', as: 'followings'
+  get 'posts/followings', to: 'posts#post_followings', as: 'post_followings'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
