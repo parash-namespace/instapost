@@ -10,13 +10,11 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
-
 	def authenticate_user
 		if current_user.nil?
 			flash[:error] = "Login to perform the task."
 			redirect_to root_path
 		end
 	end
-
 
 end
